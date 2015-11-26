@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  TGLAugmentedRealityExample
+
+  Created by Tim Gleue on 26.11.15.
+  Copyright © 2015 Tim Gleue. All rights reserved.
+*/
+
+"OK" = "OK";
+
+"Standort" = "Standort";
+"Einstellungen" = "Einstellungen";
+
+"Standort kann nicht ermittelt werden" = "Standort kann nicht ermittelt werden";
+"Kein Zugriff auf Standort" = "Kein Zugriff auf Standort";
+"Dein Standort kann nicht angezeigt werden.\n\nGehe zu den Einstellungen, um den Zugriff zu erlauben." = "Dein Standort kann nicht angezeigt werden.\n\nGehe zu den Einstellungen, um den Zugriff zu erlauben.";
+
+"N" = "N";
+"NE" = "NE";
+"E" = "E";
+"SE" = "SE";
+"S" = "S";
+"SW" = "SW";
+"W" = "W";
+"NW" = "NW";
+
+"Callout angetippt" = "Callout angetippt";
+"Shape angetippt" = "Shape angetippt";
+"Info angetippt" = "Info angetippt";

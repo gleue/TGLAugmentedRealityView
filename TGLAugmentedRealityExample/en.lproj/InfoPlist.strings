@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  TGLAugmentedRealityExample
+
+  Created by Tim Gleue on 26.11.15.
+  Copyright © 2015 Tim Gleue. All rights reserved.
+*/
+
+"NSLocationWhenInUseUsageDescription" = "Location will be used to find and display nearby POIs.";

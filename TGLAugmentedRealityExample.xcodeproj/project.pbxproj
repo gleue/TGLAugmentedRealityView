@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D0E46571C071533003CBE4F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D0E46551C071533003CBE4F /* Localizable.strings */; };
+		3D0E465B1C0717EC003CBE4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D0E465D1C0717EC003CBE4F /* InfoPlist.strings */; };
+		3D0E465F1C071950003CBE4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D0E46611C071950003CBE4F /* LaunchScreen.storyboard */; };
+		3D701EE51BFF53410092DB4B /* PlaceOfInterestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D701EE41BFF53410092DB4B /* PlaceOfInterestView.m */; };
+		3D7AD0AF1BF0BDD300EB040C /* PlaceOfInterest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7AD0AE1BF0BDD300EB040C /* PlaceOfInterest.m */; };
+		3D8A19411C060FED00B91862 /* TGLARBillboardImageShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8A19331C060FED00B91862 /* TGLARBillboardImageShape.m */; };
+		3D8A19421C060FED00B91862 /* TGLARCompassView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8A19351C060FED00B91862 /* TGLARCompassView.m */; };
+		3D8A19431C060FED00B91862 /* TGLARImageShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8A19371C060FED00B91862 /* TGLARImageShape.m */; };
+		3D8A19441C060FED00B91862 /* TGLAROverlayContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8A193A1C060FED00B91862 /* TGLAROverlayContainerView.m */; };
+		3D8A19451C060FED00B91862 /* TGLARShapeOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8A193C1C060FED00B91862 /* TGLARShapeOverlay.m */; };
+		3D8A19461C060FED00B91862 /* TGLARView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8A193E1C060FED00B91862 /* TGLARView.m */; };
+		3D8A19471C060FED00B91862 /* TGLARViewOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8A19401C060FED00B91862 /* TGLARViewOverlay.m */; };
+		3DAEF8671BF0954C0037E9C4 /* AugmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAEF8611BF0954C0037E9C4 /* AugmentedViewController.m */; };
+		3DCE74C81BECB2E800985E03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCE74C71BECB2E800985E03 /* main.m */; };
+		3DCE74CB1BECB2E800985E03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCE74CA1BECB2E800985E03 /* AppDelegate.m */; };
+		3DCE74CE1BECB2E800985E03 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCE74CD1BECB2E800985E03 /* SearchViewController.m */; };
+		3DCE74D11BECB2E800985E03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DCE74CF1BECB2E800985E03 /* Main.storyboard */; };
+		3DCE74D31BECB2E800985E03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DCE74D21BECB2E800985E03 /* Assets.xcassets */; };
+		3DCE74DE1BECB30400985E03 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCE74DD1BECB30400985E03 /* MapKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3D0E46501C06FF0F003CBE4F /* TGLARCompass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLARCompass.h; sourceTree = "<group>"; };
+		3D0E46711C071C11003CBE4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3D0E46721C071C11003CBE4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3D0E46731C071C51003CBE4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		3D0E46751C071C6C003CBE4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3D0E46761C071C76003CBE4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3D0E46791C071E01003CBE4F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3D0E467A1C071E06003CBE4F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3D701EE31BFF53410092DB4B /* PlaceOfInterestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceOfInterestView.h; sourceTree = "<group>"; };
+		3D701EE41BFF53410092DB4B /* PlaceOfInterestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceOfInterestView.m; sourceTree = "<group>"; };
+		3D7AD0AD1BF0BDD300EB040C /* PlaceOfInterest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceOfInterest.h; sourceTree = "<group>"; };
+		3D7AD0AE1BF0BDD300EB040C /* PlaceOfInterest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceOfInterest.m; sourceTree = "<group>"; };
+		3D8A19321C060FED00B91862 /* TGLARBillboardImageShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLARBillboardImageShape.h; sourceTree = "<group>"; };
+		3D8A19331C060FED00B91862 /* TGLARBillboardImageShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLARBillboardImageShape.m; sourceTree = "<group>"; };
+		3D8A19341C060FED00B91862 /* TGLARCompassView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLARCompassView.h; sourceTree = "<group>"; };
+		3D8A19351C060FED00B91862 /* TGLARCompassView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLARCompassView.m; sourceTree = "<group>"; };
+		3D8A19361C060FED00B91862 /* TGLARImageShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLARImageShape.h; sourceTree = "<group>"; };
+		3D8A19371C060FED00B91862 /* TGLARImageShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLARImageShape.m; sourceTree = "<group>"; };
+		3D8A19381C060FED00B91862 /* TGLAROverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLAROverlay.h; sourceTree = "<group>"; };
+		3D8A19391C060FED00B91862 /* TGLAROverlayContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLAROverlayContainerView.h; sourceTree = "<group>"; };
+		3D8A193A1C060FED00B91862 /* TGLAROverlayContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLAROverlayContainerView.m; sourceTree = "<group>"; };
+		3D8A193B1C060FED00B91862 /* TGLARShapeOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLARShapeOverlay.h; sourceTree = "<group>"; };
+		3D8A193C1C060FED00B91862 /* TGLARShapeOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLARShapeOverlay.m; sourceTree = "<group>"; };
+		3D8A193D1C060FED00B91862 /* TGLARView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLARView.h; sourceTree = "<group>"; };
+		3D8A193E1C060FED00B91862 /* TGLARView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLARView.m; sourceTree = "<group>"; };
+		3D8A193F1C060FED00B91862 /* TGLARViewOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLARViewOverlay.h; sourceTree = "<group>"; };
+		3D8A19401C060FED00B91862 /* TGLARViewOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLARViewOverlay.m; sourceTree = "<group>"; };
+		3DAEF8601BF0954C0037E9C4 /* AugmentedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AugmentedViewController.h; sourceTree = "<group>"; };
+		3DAEF8611BF0954C0037E9C4 /* AugmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AugmentedViewController.m; sourceTree = "<group>"; };
+		3DCE74C31BECB2E800985E03 /* TGLARViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TGLARViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DCE74C71BECB2E800985E03 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3DCE74C91BECB2E800985E03 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3DCE74CA1BECB2E800985E03 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3DCE74CC1BECB2E800985E03 /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		3DCE74CD1BECB2E800985E03 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		3DCE74D21BECB2E800985E03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3DCE74D71BECB2E800985E03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DCE74DD1BECB30400985E03 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3DCE74C01BECB2E800985E03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DCE74DE1BECB30400985E03 /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D8A19311C060FED00B91862 /* TGLAugmentedRealityView */ = {
+			isa = PBXGroup;
+			children = (
+				3D8A19321C060FED00B91862 /* TGLARBillboardImageShape.h */,
+				3D8A19331C060FED00B91862 /* TGLARBillboardImageShape.m */,
+				3D0E46501C06FF0F003CBE4F /* TGLARCompass.h */,
+				3D8A19341C060FED00B91862 /* TGLARCompassView.h */,
+				3D8A19351C060FED00B91862 /* TGLARCompassView.m */,
+				3D8A19361C060FED00B91862 /* TGLARImageShape.h */,
+				3D8A19371C060FED00B91862 /* TGLARImageShape.m */,
+				3D8A19381C060FED00B91862 /* TGLAROverlay.h */,
+				3D8A19391C060FED00B91862 /* TGLAROverlayContainerView.h */,
+				3D8A193A1C060FED00B91862 /* TGLAROverlayContainerView.m */,
+				3D8A193B1C060FED00B91862 /* TGLARShapeOverlay.h */,
+				3D8A193C1C060FED00B91862 /* TGLARShapeOverlay.m */,
+				3D8A193D1C060FED00B91862 /* TGLARView.h */,
+				3D8A193E1C060FED00B91862 /* TGLARView.m */,
+				3D8A193F1C060FED00B91862 /* TGLARViewOverlay.h */,
+				3D8A19401C060FED00B91862 /* TGLARViewOverlay.m */,
+			);
+			path = TGLAugmentedRealityView;
+			sourceTree = "<group>";
+		};
+		3DAEF8551BF0952E0037E9C4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3DCE74CF1BECB2E800985E03 /* Main.storyboard */,
+				3DCE74D21BECB2E800985E03 /* Assets.xcassets */,
+				3D0E46611C071950003CBE4F /* LaunchScreen.storyboard */,
+				3D0E46551C071533003CBE4F /* Localizable.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3DCE74BA1BECB2E800985E03 = {
+			isa = PBXGroup;
+			children = (
+				3D8A19311C060FED00B91862 /* TGLAugmentedRealityView */,
+				3DCE74C51BECB2E800985E03 /* TGLAugmentedRealityExample */,
+				3DCE74C41BECB2E800985E03 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3DCE74C41BECB2E800985E03 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3DCE74C31BECB2E800985E03 /* TGLARViewExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DCE74C51BECB2E800985E03 /* TGLAugmentedRealityExample */ = {
+			isa = PBXGroup;
+			children = (
+				3DCE74C91BECB2E800985E03 /* AppDelegate.h */,
+				3DCE74CA1BECB2E800985E03 /* AppDelegate.m */,
+				3DAEF8601BF0954C0037E9C4 /* AugmentedViewController.h */,
+				3DAEF8611BF0954C0037E9C4 /* AugmentedViewController.m */,
+				3D7AD0AD1BF0BDD300EB040C /* PlaceOfInterest.h */,
+				3D7AD0AE1BF0BDD300EB040C /* PlaceOfInterest.m */,
+				3D701EE31BFF53410092DB4B /* PlaceOfInterestView.h */,
+				3D701EE41BFF53410092DB4B /* PlaceOfInterestView.m */,
+				3DCE74CC1BECB2E800985E03 /* SearchViewController.h */,
+				3DCE74CD1BECB2E800985E03 /* SearchViewController.m */,
+				3DCE74DF1BECB31200985E03 /* Frameworks */,
+				3DAEF8551BF0952E0037E9C4 /* Resources */,
+				3DCE74C61BECB2E800985E03 /* Supporting Files */,
+			);
+			path = TGLAugmentedRealityExample;
+			sourceTree = "<group>";
+		};
+		3DCE74C61BECB2E800985E03 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DCE74D71BECB2E800985E03 /* Info.plist */,
+				3DCE74C71BECB2E800985E03 /* main.m */,
+				3D0E465D1C0717EC003CBE4F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3DCE74DF1BECB31200985E03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCE74DD1BECB30400985E03 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3DCE74C21BECB2E800985E03 /* TGLAugmentedRealityExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DCE74DA1BECB2E800985E03 /* Build configuration list for PBXNativeTarget "TGLAugmentedRealityExample" */;
+			buildPhases = (
+				3DCE74BF1BECB2E800985E03 /* Sources */,
+				3DCE74C01BECB2E800985E03 /* Frameworks */,
+				3DCE74C11BECB2E800985E03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TGLAugmentedRealityExample;
+			productName = TGLAugmentedRealityExample;
+			productReference = 3DCE74C31BECB2E800985E03 /* TGLARViewExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3DCE74BB1BECB2E800985E03 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Tim Gleue";
+				TargetAttributes = {
+					3DCE74C21BECB2E800985E03 = {
+						CreatedOnToolsVersion = 7.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 3DCE74BE1BECB2E800985E03 /* Build configuration list for PBXProject "TGLAugmentedRealityExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				de,
+				Base,
+				en,
+			);
+			mainGroup = 3DCE74BA1BECB2E800985E03;
+			productRefGroup = 3DCE74C41BECB2E800985E03 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3DCE74C21BECB2E800985E03 /* TGLAugmentedRealityExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3DCE74C11BECB2E800985E03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D0E465F1C071950003CBE4F /* LaunchScreen.storyboard in Resources */,
+				3D0E46571C071533003CBE4F /* Localizable.strings in Resources */,
+				3D0E465B1C0717EC003CBE4F /* InfoPlist.strings in Resources */,
+				3DCE74D31BECB2E800985E03 /* Assets.xcassets in Resources */,
+				3DCE74D11BECB2E800985E03 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3DCE74BF1BECB2E800985E03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DCE74CE1BECB2E800985E03 /* SearchViewController.m in Sources */,
+				3DCE74CB1BECB2E800985E03 /* AppDelegate.m in Sources */,
+				3D8A19421C060FED00B91862 /* TGLARCompassView.m in Sources */,
+				3D8A19451C060FED00B91862 /* TGLARShapeOverlay.m in Sources */,
+				3DAEF8671BF0954C0037E9C4 /* AugmentedViewController.m in Sources */,
+				3D8A19431C060FED00B91862 /* TGLARImageShape.m in Sources */,
+				3D8A19471C060FED00B91862 /* TGLARViewOverlay.m in Sources */,
+				3D8A19461C060FED00B91862 /* TGLARView.m in Sources */,
+				3D8A19441C060FED00B91862 /* TGLAROverlayContainerView.m in Sources */,
+				3D7AD0AF1BF0BDD300EB040C /* PlaceOfInterest.m in Sources */,
+				3DCE74C81BECB2E800985E03 /* main.m in Sources */,
+				3D8A19411C060FED00B91862 /* TGLARBillboardImageShape.m in Sources */,
+				3D701EE51BFF53410092DB4B /* PlaceOfInterestView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3D0E46551C071533003CBE4F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D0E46761C071C76003CBE4F /* en */,
+				3D0E46791C071E01003CBE4F /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		3D0E465D1C0717EC003CBE4F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D0E46751C071C6C003CBE4F /* en */,
+				3D0E467A1C071E06003CBE4F /* de */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3D0E46611C071950003CBE4F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D0E46721C071C11003CBE4F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3DCE74CF1BECB2E800985E03 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D0E46711C071C11003CBE4F /* Base */,
+				3D0E46731C071C51003CBE4F /* en */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3DCE74D81BECB2E800985E03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3DCE74D91BECB2E800985E03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3DCE74DB1BECB2E800985E03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TGLAugmentedRealityExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gleue-interactive.TGLAugmentedRealityExample";
+				PRODUCT_NAME = TGLARViewExample;
+			};
+			name = Debug;
+		};
+		3DCE74DC1BECB2E800985E03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TGLAugmentedRealityExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gleue-interactive.TGLAugmentedRealityExample";
+				PRODUCT_NAME = TGLARViewExample;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3DCE74BE1BECB2E800985E03 /* Build configuration list for PBXProject "TGLAugmentedRealityExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DCE74D81BECB2E800985E03 /* Debug */,
+				3DCE74D91BECB2E800985E03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DCE74DA1BECB2E800985E03 /* Build configuration list for PBXNativeTarget "TGLAugmentedRealityExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DCE74DB1BECB2E800985E03 /* Debug */,
+				3DCE74DC1BECB2E800985E03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3DCE74BB1BECB2E800985E03 /* Project object */;
+}
