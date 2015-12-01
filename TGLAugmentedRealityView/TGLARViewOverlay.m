@@ -55,12 +55,12 @@
     self.layer.shadowOpacity = 0.5;
     self.layer.shadowRadius = 3.0;
 
-    self.contentView = [[UIView alloc] init];
-    self.contentView.backgroundColor = [UIColor clearColor];
-    self.contentView.opaque = NO;
-    self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
+    _contentView = [[UIView alloc] init];
+    _contentView.backgroundColor = [UIColor clearColor];
+    _contentView.opaque = NO;
+    _contentView.translatesAutoresizingMaskIntoConstraints = NO;
 
-    [self addSubview:self.contentView];
+    [self addSubview:_contentView];
 
     _calloutLineWidth = 2.0;
     _calloutLineColor = [UIColor whiteColor];

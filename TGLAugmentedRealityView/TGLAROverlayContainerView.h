@@ -28,10 +28,13 @@
 
 #import "TGLARViewOverlay.h"
 
+/// A @p UIView subclass used internally to position the overlay shapes on a @p TGLARView.
 @interface TGLAROverlayContainerView : UIView
 
+/// The current transformation derived from device attitude.
 @property (nonatomic, assign) GLKMatrix4 overlayTransformation;
 
-@property (nonatomic, strong) NSArray<TGLARViewOverlay *> *overlayViews;
+/// An array of @p TGLARViewOverlay objects to be layout out.
+@property (nonatomic, strong, nullable) NSArray<TGLARViewOverlay *> *overlayViews;
 
 @end

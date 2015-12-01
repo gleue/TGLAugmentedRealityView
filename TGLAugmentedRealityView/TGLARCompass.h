@@ -25,12 +25,20 @@
 
 #import <Foundation/Foundation.h>
 
+/// An object presenting the current heading angle from a @p TGLARView must adopt this protocol.
 @protocol TGLARCompass <NSObject>
 
+/// The current heading angle in degrees.
 - (void)setHeadingAngle:(CGFloat)headingAngle;
 
 @optional
 
+/** The current field of view in degrees.
+ *
+ * If the receiver responds to this selector,
+ * the camera's horizontal field of view is set
+ * here.
+ */
 - (void)setFieldOfView:(CGFloat)fieldOfView;
 
 @end

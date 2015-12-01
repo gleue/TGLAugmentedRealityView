@@ -161,7 +161,7 @@ static const CGFloat kFOVARViewLensAdjustmentFactor = 0.05;
 }
 
 - (void)dealloc {
-
+    
 	[self stop];
 
     self.overlayShapes = nil;

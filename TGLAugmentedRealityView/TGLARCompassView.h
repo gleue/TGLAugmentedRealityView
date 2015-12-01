@@ -30,18 +30,32 @@
 
 IB_DESIGNABLE
 
+/** A @p UIView subclass presenting the current heading angle as a horizontal HUD.
+ *
+ * The HUD has an upper scale with 16 lines at 22.5 degrees, a lower scale with
+ * 72 lines at 5 degrees and centered labels for the 8 main directions of the 
+ * compass rose.
+ */
 @interface TGLARCompassView : UIView <TGLARCompass>
 
-@property (nonatomic, copy) IBInspectable UIFont *labelFont;
-@property (nonatomic, copy) IBInspectable UIColor *labelColor;
+/// The compass label font. Default is bold system font at 24 points.
+@property (nonatomic, copy, nullable) IBInspectable UIFont *labelFont;
+/// The compass label color. Default is @p [UIColor whiteColor].
+@property (nonatomic, copy, nullable) IBInspectable UIColor *labelColor;
 
-@property (nonatomic, copy) IBInspectable UIColor *northColor;
+/// The north direction color. Default is @p [UIColor redColor].
+@property (nonatomic, copy, nullable) IBInspectable UIColor *northColor;
+/// The north scale line width. Default is @p 4.0.
 @property (nonatomic, assign) IBInspectable CGFloat northLineWidth;
 
-@property (nonatomic, copy) IBInspectable UIColor *topScaleColor;
+/// The upper compass scale color. Default is @p [UIColor whiteColor].
+@property (nonatomic, copy, nullable) IBInspectable UIColor *topScaleColor;
+/// The upper scale line width. Default is @p 2.0.
 @property (nonatomic, assign) IBInspectable CGFloat topScaleLineWidth;
 
-@property (nonatomic, copy) IBInspectable UIColor *bottomScaleColor;
+/// The lower compass scale color. Default is @p [UIColor whiteColor].
+@property (nonatomic, copy, nullable) IBInspectable UIColor *bottomScaleColor;
+/// The lower scale line width. Default is @p 2.0.
 @property (nonatomic, assign) IBInspectable CGFloat bottomScaleLineWidth;
 
 @end

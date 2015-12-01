@@ -27,19 +27,40 @@
 
 #import "TGLAROverlay.h"
 
+/** A @p UIView subclass to present 2D content in a @p TGLARView.
+ *
+ * Any subviews to this overlay @a must be placed inside @p -contentView.
+ *
+ * The overlay draws a callout line from the overlay's @p -targetPosition
+ * and places the content view at the other end of the callout line.
+ *
+ * The content view background is transparent by default and is @a not
+ * the same as the @p -calloutColor.
+ */
 @interface TGLARViewOverlay : UIView
 
+/// The overlay this view belongs to.
 @property (nonatomic, weak) id<TGLAROverlay> overlay;
 
-@property (nonatomic, strong) UIView *contentView;
+/// The view containing the all of the overlays content-related views.
+@property (nonatomic, readonly, nonnull) UIView *contentView;
 
+/** If set to @YES place the callout and the @p -contentView below the
+ * overlay @-targetPosition, above otherwise. Default is @p NO. */
 @property (nonatomic, assign) BOOL upsideDown;
+/** If set to @YES place the callout and the @p -contentView to the
+ * left of @-targetPosition, to the right otherwise. Default is @p NO. */
 @property (nonatomic, assign) BOOL rightAligned;
 
+/** The vertical distance in points between the overlay @p -targetPosition
+ * on screen and the top/bottom edge of the @p -contentView. Default is @p 100.0. */
 @property (nonatomic, assign) CGFloat calloutLength;
+/// The callout line width in points. Default is 2.0.
 @property (nonatomic, assign) CGFloat calloutLineWidth;
-@property (nonatomic, copy) UIColor *calloutLineColor;
+/// The callout line color. Default is @p [UIColor whiteColor].
+@property (nonatomic, copy, nullable) UIColor *calloutLineColor;
 
+/// Private property. For internal use only
 @property (nonatomic, assign) GLKVector3 viewPosition;
 
 @end

@@ -25,8 +25,10 @@
 
 #import "TGLARImageShape.h"
 
+/// A @p TGLARImageShape automatically rotating towards the camera around its origin.
 @interface TGLARBillboardImageShape : TGLARImageShape
 
+/** Disables billboard transformation. Default is NO. */
 @property (nonatomic, assign, getter=isLocked) BOOL locked;
 
 @end

@@ -29,17 +29,67 @@
 @class TGLARViewOverlay;
 @class TGLARShapeOverlay;
 
+/// An object returned by a @p TGLARViewDataSource must adopt this protocol.
 @protocol TGLAROverlay <NSObject>
 
+/** Returns the X/Y/Z position this overlay is attached to.
+ *
+ * The position is defined relative to the camera, which is
+ * located at the coordinate system origin. The distance
+ * values are given in meters.
+ *
+ * The coordinate system is right-handed with positive X axis
+ * pointing north, the postive Y axis pointing east and the
+ * positive Z axis pointing upwards.
+ *
+ * @return The X/Y/Z position of the overlay target.
+ */
 - (GLKVector3)targetPosition;
+
+/** Set the X/Y/Z position this overlay should be attached to.
+ *
+ * The distance values have to be given in meters.
+ *
+ * @param position The the overlay target X/Y/Z position.
+ *
+ * @sa -targetPosition
+ */
 - (void)setTargetPosition:(GLKVector3)position;
 
 @optional;
 
-- (TGLARViewOverlay *)overlayView;
-- (void)setOverlayView:(TGLARViewOverlay *)view;
+/** Returns the view to show for this overlay.
+ *
+ * If the receiver does not respond to this selector
+ * no view is shown for the overlay.
+ *
+ * @return A TGLARViewOverlay instance.
+ *
+ * @sa TGLARViewOverlay
+ */
+- (nullable TGLARViewOverlay *)overlayView;
 
-- (TGLARShapeOverlay *)overlayShape;
-- (void)setOverlayShape:(TGLARShapeOverlay *)shape;
+/** Set the view to show for this overlay.
+ *
+ * @param overlayView A TGLARViewOverlay instance to show for this overlay.
+ */
+- (void)setOverlayView:(nullable TGLARViewOverlay *)overlayView;
+
+/** Returns the 3D shape to show for this overlay.
+ *
+ * If the receiver does not respond to this selector
+ * no shape is shown for the overlay.
+ *
+ * @return A TGLARShapeOverlay instance.
+ *
+ * @sa TGLARShapeOverlay
+ */
+- (nullable TGLARShapeOverlay *)overlayShape;
+
+/** Set the 3D shape to show for this overlay.
+ *
+ * @param overlayView A TGLARShapeOverlay instance to show for this overlay.
+ */
+- (void)setOverlayShape:(nullable TGLARShapeOverlay *)overlayShape;
 
 @end

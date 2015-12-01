@@ -31,7 +31,9 @@
 
     if (self.locked) return [super draw];
 
-    // Compute billboard transform
+    // Compute billboard transform and
+    // replace shape transform temporarily
+    // for drawing
     //
     // see http://nehe.gamedev.net/article/billboarding_how_to/18011/
     //

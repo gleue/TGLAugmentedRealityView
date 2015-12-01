@@ -51,7 +51,7 @@
 }
 
 - (void)dealloc {
-
+    
     if (self.context) {
         
         [EAGLContext setCurrentContext:self.context];

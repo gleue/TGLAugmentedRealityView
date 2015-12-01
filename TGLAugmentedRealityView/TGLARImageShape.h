@@ -25,10 +25,25 @@
 
 #import "TGLARShapeOverlay.h"
 
+/// A rectangular 3D shape in Y/Z plane showing an image texture and facing the positive X axis.
 @interface TGLARImageShape : TGLARShapeOverlay
 
-- (instancetype)initWithContext:(EAGLContext *)context size:(CGSize)size image:(UIImage *)image;
+/** Designated intializer.
+ *
+ * @param context OpenGL ES context to create shape in.
+ * @param size Shape width and height in meters.
+ * @param image The Image to apply as shape's texture.
+ *
+ * @return An initilized instance or nil if initialization fails.
+ */
+- (nullable instancetype)initWithContext:(nonnull EAGLContext *)context size:(CGSize)size image:(nullable UIImage *)image;
 
-- (BOOL)setImage:(UIImage *)image;
+/** Set the shape's texture image.
+ *
+ * @param image The Image to apply as shape's texture.
+ *
+ * @return YES on success, NO if texture loading fails.
+ */
+- (BOOL)setImage:(nullable UIImage *)image;
 
 @end

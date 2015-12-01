@@ -28,20 +28,59 @@
 
 #import "TGLAROverlay.h"
 
+/** An object to present 3D content in a @p TGLARView.
+ *
+ * The containing @p TGLARView sets the projection and
+ * modelview matrices depending on the current device
+ * orientation and attitude.
+ *
+ * A custom @p -transform is pre-multipled to the modelview
+ * matrix to allow for individual shape tranformations before
+ * the viewing transformations are applied.
+ */
 @interface TGLARShapeOverlay : NSObject
 
+/// The overlay this shape belongs to.
 @property (nonatomic, weak) id<TGLAROverlay> overlay;
 
+/// The shape's OpenGL ES rendering context.
 @property (nonatomic, weak) EAGLContext *context;
-@property (nonatomic, strong) GLKBaseEffect *effect;
+/// The shape transformation matrix pre-multiplied to @p -viewMatrix.
 @property (nonatomic, assign) GLKMatrix4 transform;
+/// The shape's GLKKit rendering effect. @sa GLKBaseEffect for details.
+@property (nonatomic, readonly, nonnull) GLKBaseEffect *effect;
 
+/// The OpenGL ES view transformation to be applied. Set by the containing @p TGLARView.
 @property (nonatomic, assign) GLKMatrix4 viewMatrix;
+/// The OpenGL ES projection transformation to be applied. Set by the containing @p TGLARView.
 @property (nonatomic, assign) GLKMatrix4 projectionMatrix;
 
-- (instancetype)initWithContext:(EAGLContext *)context;
+/// Initialize an instance using the given OpenGL ES context.
+- (nullable instancetype)initWithContext:(nonnull EAGLContext *)context;
 
+/** Draws the shape using OpenGL ES.
+ *
+ * The method implementation initializes the transform property
+ * of the @p -effect and calls its @p -prepareToDraw method.
+ *
+ * Override this method in subclasses to customize the shape.
+ * Unless the subclass takes care of setting up the effect as
+ * described above, the subcalls implementation @a must call
+ * @p [super draw].
+ *
+ * @return YES if drawing succeeds. NO otherwise, e.g. if -context is no longer valid.
+ */
 - (BOOL)draw;
+
+/** Draws the shape using OpenGL ES without any shading and texturing.
+ *
+ * The base class implementation simply calls @[self -draw].
+ *
+ * This method is used internally to implement picking shapes
+ * on an @p TGLARView.
+ *
+ * @sa @p TGLARView
+ */
 - (BOOL)drawUsingConstantColor:(GLKVector4)color;
 
 @end
