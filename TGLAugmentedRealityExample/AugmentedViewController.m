@@ -64,6 +64,8 @@
     self.userHeight = 1.6;
     self.userLocation = self.locationManager.location;
     
+    // A single image shape in the X/Y plane at the user's location
+    //
     PlaceOfInterest *userLocationPOI = [[PlaceOfInterest alloc] init];
 
     userLocationPOI.title = NSLocalizedString(@"Standort", nil);
@@ -85,18 +87,12 @@
     CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
     
     [self updateLocationServiceAuthorizationStatus:status];
-    [self createOverlaysForPlaces:self.places];
 
+    [self createOverlaysForPlaces:self.places];
     [self.arView reloadData];
+
 	[self.arView start];
 
-    self.arView.interfaceOrientation = [UIApplication sharedApplication].statusBarOrientation;
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-
-    [super viewDidAppear:animated];
-    
     self.arView.interfaceOrientation = [UIApplication sharedApplication].statusBarOrientation;
 }
 
@@ -126,20 +122,6 @@
     self.arView.interfaceOrientation = self.interfaceOrientation;
 }
 
-#pragma mark - Navigation
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    if ([segue.identifier isEqualToString:@"OpenSearch"]) {
-        
-        UINavigationController *navigation = segue.destinationViewController;
-        SearchViewController *controller = (SearchViewController *)navigation.topViewController;
-
-        controller.currentLocation = self.userLocation;
-        controller.foundPOIs = self.places;
-    }
-}
-
 - (IBAction)closeSearch:(UIStoryboardSegue *)segue {
     
     SearchViewController *controller = segue.sourceViewController;
@@ -162,7 +144,7 @@
         
         _userLocation = userLocation;
         
-        [self updatePlaceOverlayTransforms];
+        [self updatePlaceOverlayPositions];
     }
 }
 
@@ -178,8 +160,21 @@
     if (self.isViewLoaded) {
         
         [self createOverlaysForPlaces:self.places];
-
         [self.arView reloadData];
+    }
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"OpenSearch"]) {
+        
+        UINavigationController *navigation = segue.destinationViewController;
+        SearchViewController *controller = (SearchViewController *)navigation.topViewController;
+        
+        controller.currentLocation = self.userLocation;
+        controller.foundPOIs = self.places;
     }
 }
 
@@ -254,19 +249,13 @@
 
 - (NSInteger)numberOfOverlaysInARView:(TGLARView *)arview {
 
+    // All the POIs plus the user location overlay
     return self.places.count + 1;
 }
 
 - (id<TGLAROverlay>)arView:(TGLARView *)arview overlayAtIndex:(NSInteger)index {
     
-    if (index < self.places.count) {
-        
-        return self.places[index];
-
-    } else {
-        
-        return self.userLocationPOI;
-    }
+    return (index < self.places.count) ? self.places[index] : self.userLocationPOI;
 }
 
 #pragma mark - TGLARViewDelegate protocol
@@ -333,7 +322,7 @@
 
     for (PlaceOfInterest *place in places) {
         
-        if ([place respondsToSelector:@selector(overlayView)] && !place.overlayView) {
+        if (!place.overlayView) {
 
             PlaceOfInterestView *overlayView = [[PlaceOfInterestView alloc] init];
             
@@ -345,17 +334,26 @@
             place.overlayView = overlayView;
         }
         
-        if ([place respondsToSelector:@selector(overlayShape)] && !place.overlayShape) {
+        if (!place.overlayShape) {
             
             place.overlayShape = [[TGLARBillboardImageShape alloc] initWithContext:self.arView.renderContext size:CGSizeMake(100.0, 100.0) image:[UIImage imageNamed:@"POI"]];
         }
     }
     
-    [self updatePlaceOverlayTransforms];
+    [self updatePlaceOverlayPositions];
 }
 
-- (void)updatePlaceOverlayTransforms {
+- (void)updatePlaceOverlayPositions {
     
+    // The overlay -targetPositions are relative to the
+    // camera position, which is located at the origin.
+    //
+    // Therefore we compute the distances in the X and Y
+    // directions and set the overlay position accordingly.
+    //
+    // NOTE: Since the POI altitued are always zero we
+    //       do not set the Z component here.
+    //
     MKMapPoint userPoint = MKMapPointForCoordinate(self.userLocation.coordinate);
     
     for (PlaceOfInterest *place in self.places) {
@@ -382,15 +380,8 @@
 
     for (PlaceOfInterest *place in places) {
         
-        if ([place respondsToSelector:@selector(overlayShape)]) {
-            
-            place.overlayShape = nil;
-        }
-        
-        if ([place respondsToSelector:@selector(overlayView)]) {
-            
-            place.overlayView = nil;
-        }
+        place.overlayShape = nil;
+        place.overlayView = nil;
     }
 }
 

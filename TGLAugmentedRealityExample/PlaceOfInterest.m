@@ -53,14 +53,14 @@
 
 #pragma mark - TGLAROverlay protocol
 
-- (void)setOverlayView:(TGLARViewOverlay *)overlayView {
+- (void)setOverlayView:(nullable TGLARViewOverlay *)overlayView {
     
     _overlayView = overlayView;
     
     self.overlayView.overlay = self;
 }
 
-- (void)setOverlayShape:(TGLARShapeOverlay *)overlayShape {
+- (void)setOverlayShape:(nullable TGLARShapeOverlay *)overlayShape {
     
     _overlayShape = overlayShape;
     

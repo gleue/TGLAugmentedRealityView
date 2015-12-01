@@ -172,18 +172,17 @@ static inline UIViewAnimationOptions animationOptionsWithCurve(UIViewAnimationCu
     
     [searchBar resignFirstResponder];
     
-    // Create and initialize a search request object.
     MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
     
     request.naturalLanguageQuery = searchBar.text;
     request.region = self.mapView.region;
 
-    // Create and initialize a search object.
     MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
     
-    // Start the search and display the results as annotations on the map.
     [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
         
+        // Create a POI for each found item
+        //
         NSMutableArray<PlaceOfInterest *> *places = [NSMutableArray array];
 
         for (MKMapItem *item in response.mapItems) {
