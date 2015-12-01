@@ -33,11 +33,23 @@ Optionally:
 * Implement `TGLARCompass` protocol
 * Set `TGLARView`'s `-compass` outlet
 
+Sample
+======
+
+Build and run `TGLAugmentedRealityExample.xcodeproj` on an iDevice. The app will run on the
+simulator, too, but will give you no camera image or device orientation.
+
+Tap the blue button and search for POIs in the map view. When finished, close the map to
+reveal the AR view. The POIs will be displayed with a callout and a billboard image.
+
+On the AR view use a horizontal pan gesture to adjust the compass heading and a pinch
+gesture to adjust the zoom factor, if available in the active video format.
+
 Requirements
 ============
 
 * ARC
-* iOS 9.1
+* iOS >= 8.0
 * Xcode 7.1
 
 License
