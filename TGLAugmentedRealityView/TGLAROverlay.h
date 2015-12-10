@@ -69,12 +69,6 @@
  */
 - (nullable TGLARViewOverlay *)overlayView;
 
-/** Set the view to show for this overlay.
- *
- * @param overlayView A TGLARViewOverlay instance to show for this overlay.
- */
-- (void)setOverlayView:(nullable TGLARViewOverlay *)overlayView;
-
 /** Returns the 3D shape to show for this overlay.
  *
  * If the receiver does not respond to this selector
@@ -85,11 +79,5 @@
  * @sa TGLARShapeOverlay
  */
 - (nullable TGLARShapeOverlay *)overlayShape;
-
-/** Set the 3D shape to show for this overlay.
- *
- * @param overlayView A TGLARShapeOverlay instance to show for this overlay.
- */
-- (void)setOverlayShape:(nullable TGLARShapeOverlay *)overlayShape;
 
 @end
