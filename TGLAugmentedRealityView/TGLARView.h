@@ -162,6 +162,11 @@
 /// Maximum video zoom factor. @p 1.0 means no zoom.
 @property (nonatomic, readonly) CGFloat maxZoomFactor;
 
+/// Indicates whether CoreMotion can use compass on the current device
+@property (nonatomic, readonly, getter=isMagenticNorthAvailable) BOOL magneticNorthAvailable;
+/// If compass and location are available use true north heading. Default is @p NO.
+@property (nonatomic, assign, getter=isUsingTrueNorth) BOOL useTrueNorth;
+
 /** Camera height above X/Y plane in meters. Default is @p 0.0.
  *
  * The user may change this value by a vertical pan gesture.

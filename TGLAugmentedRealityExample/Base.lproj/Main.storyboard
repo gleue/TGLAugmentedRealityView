@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yCS-NF-kSa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yCS-NF-kSa">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--POI Suchen-->
@@ -19,21 +19,18 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgJ-oV-PXT">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <animations/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="aFW-gr-2nC"/>
                                 </connections>
                             </mapView>
                             <searchBar contentMode="redraw" text="" placeholder="POI" translatesAutoresizingMaskIntoConstraints="NO" id="KbV-fU-cvd">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <animations/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="N6F-UZ-qCW"/>
                                 </connections>
                             </searchBar>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tgJ-oV-PXT" secondAttribute="bottom" id="6MJ-Ge-3FI"/>
@@ -75,9 +72,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvS-Iw-et9">
-                                <rect key="frame" x="280" y="460" width="40" height="40"/>
-                                <animations/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvS-Iw-et9">
+                                <rect key="frame" x="280" y="448" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="MBj-Qh-8OW"/>
                                     <constraint firstAttribute="width" constant="60" id="lCg-c5-8Dv"/>
@@ -101,7 +97,6 @@
                                     <subviews>
                                         <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="elD-VZ-UaY" customClass="TGLARCompassView">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
-                                            <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="80" id="aNV-KV-nll"/>
@@ -136,7 +131,6 @@
                                             </variation>
                                         </view>
                                     </subviews>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstItem="elD-VZ-UaY" firstAttribute="top" secondItem="vJQ-eH-4BQ" secondAttribute="top" id="2Eq-ZS-PSN"/>
                                         <constraint firstAttribute="trailing" secondItem="elD-VZ-UaY" secondAttribute="trailing" id="6PM-x2-Jl3"/>
@@ -144,21 +138,36 @@
                                         <constraint firstAttribute="bottom" secondItem="elD-VZ-UaY" secondAttribute="bottom" id="uNf-m3-Vta"/>
                                     </constraints>
                                 </view>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="Cfd-fU-4ur"/>
                                 </constraints>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qf4-Qj-78z">
+                                <rect key="frame" x="16" y="483" width="90" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Magnetisch N">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled" title="Kein Kompass">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="Geographisch N"/>
+                                <connections>
+                                    <action selector="toggleTrueNorth:" destination="yCS-NF-kSa" eventType="touchUpInside" id="Wsx-tA-rVN"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cvS-Iw-et9" firstAttribute="centerX" secondItem="xns-EX-xBU" secondAttribute="centerX" id="5av-F2-ffg"/>
                             <constraint firstAttribute="trailing" secondItem="zKi-9J-6Wb" secondAttribute="trailing" id="E7g-ai-qcO"/>
                             <constraint firstItem="zKi-9J-6Wb" firstAttribute="leading" secondItem="xns-EX-xBU" secondAttribute="leading" id="J4k-z5-88m"/>
                             <constraint firstItem="rkX-8j-TPt" firstAttribute="top" secondItem="zKi-9J-6Wb" secondAttribute="bottom" id="aS0-sZ-YrN"/>
-                            <constraint firstItem="zKi-9J-6Wb" firstAttribute="top" secondItem="cvS-Iw-et9" secondAttribute="bottom" constant="20" id="hfb-7B-9al"/>
+                            <constraint firstItem="zKi-9J-6Wb" firstAttribute="top" secondItem="Qf4-Qj-78z" secondAttribute="bottom" constant="8" id="fQT-lg-7Sa"/>
+                            <constraint firstItem="zKi-9J-6Wb" firstAttribute="top" secondItem="cvS-Iw-et9" secondAttribute="bottom" constant="32" id="hfb-7B-9al"/>
+                            <constraint firstItem="Qf4-Qj-78z" firstAttribute="leading" secondItem="xns-EX-xBU" secondAttribute="leading" constant="16" id="mWm-a8-Gxr"/>
                         </constraints>
                         <connections>
                             <outlet property="compass" destination="elD-VZ-UaY" id="znY-gg-45T"/>
@@ -175,6 +184,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="arView" destination="xns-EX-xBU" id="eFG-RW-v0I"/>
+                        <outlet property="northButton" destination="Qf4-Qj-78z" id="G3B-Ku-G9N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LL4-Gj-fdB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -190,7 +200,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="b9D-ZX-o1K">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

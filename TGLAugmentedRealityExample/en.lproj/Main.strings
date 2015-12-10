@@ -2,5 +2,14 @@
 /* Class = "UISearchBar"; placeholder = "POI"; ObjectID = "KbV-fU-cvd"; */
 "KbV-fU-cvd.placeholder" = "POI";
 
+/* Class = "UIButton"; disabledTitle = "Kein Kompass"; ObjectID = "Qf4-Qj-78z"; */
+"Qf4-Qj-78z.disabledTitle" = "No Compass";
+
+/* Class = "UIButton"; normalTitle = "Magnetisch N"; ObjectID = "Qf4-Qj-78z"; */
+"Qf4-Qj-78z.normalTitle" = "Magnetic N";
+
+/* Class = "UIButton"; selectedTitle = "Geographisch N"; ObjectID = "Qf4-Qj-78z"; */
+"Qf4-Qj-78z.selectedTitle" = "Geographic N";
+
 /* Class = "UINavigationItem"; title = "POI Suchen"; ObjectID = "dDA-fI-Tqz"; */
 "dDA-fI-Tqz.title" = "POI Suchen";

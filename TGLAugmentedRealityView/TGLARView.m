@@ -101,7 +101,10 @@ static const CGFloat kFOVARViewLensAdjustmentFactor = 0.05;
 }
 
 - (void)initARView {
-    
+
+    _magneticNorthAvailable = [CMMotionManager availableAttitudeReferenceFrames] & CMAttitudeReferenceFrameXMagneticNorthZVertical;
+    _useTrueNorth = NO;
+
     _deviceTransform = GLKMatrix4Identity;
     _cameraTransform = GLKMatrix4Identity;
     _userTransformation = GLKMatrix4Identity;
@@ -264,6 +267,25 @@ static const CGFloat kFOVARViewLensAdjustmentFactor = 0.05;
 - (CGFloat)maxZoomFactor {
     
     return self.captureDevice.activeFormat.videoMaxZoomFactor;
+}
+
+- (void)setUseTrueNorth:(BOOL)useTrueNorth {
+
+    if (useTrueNorth != _useTrueNorth && self.isMagenticNorthAvailable) {
+
+        if (useTrueNorth && [CMMotionManager availableAttitudeReferenceFrames] & CMAttitudeReferenceFrameXTrueNorthZVertical) {
+            
+            _useTrueNorth = YES;
+            
+            [self restartDeviceMotionIfNecessary];
+
+        } else if (!useTrueNorth) {
+            
+            _useTrueNorth = NO;
+            
+            [self restartDeviceMotionIfNecessary];
+        }
+    }
 }
 
 - (void)setHeightOffset:(CGFloat)offset {
@@ -534,7 +556,16 @@ static const CGFloat kFOVARViewLensAdjustmentFactor = 0.05;
 
     // When available use compass to have x axis pointing to magnetic north
     //
-    CMAttitudeReferenceFrame referenceFrame = ([CMMotionManager availableAttitudeReferenceFrames] & CMAttitudeReferenceFrameXMagneticNorthZVertical) ? CMAttitudeReferenceFrameXMagneticNorthZVertical : CMAttitudeReferenceFrameXArbitraryZVertical;
+    CMAttitudeReferenceFrame referenceFrame;
+    
+    if (self.isMagenticNorthAvailable) {
+        
+        referenceFrame = self.isUsingTrueNorth ? CMAttitudeReferenceFrameXTrueNorthZVertical : CMAttitudeReferenceFrameXMagneticNorthZVertical;
+
+    } else {
+
+        referenceFrame = CMAttitudeReferenceFrameXArbitraryZVertical;
+    }
     
     [self.motionManager startDeviceMotionUpdatesUsingReferenceFrame:referenceFrame];
 }
@@ -544,6 +575,15 @@ static const CGFloat kFOVARViewLensAdjustmentFactor = 0.05;
     [self.motionManager stopDeviceMotionUpdates];
     
     self.motionManager = nil;
+}
+
+- (void)restartDeviceMotionIfNecessary {
+
+    if (self.motionManager) {
+        
+        [self stopDeviceMotion];
+        [self startDeviceMotion];
+    }
 }
 
 #pragma mark - Redraw handling

@@ -37,6 +37,7 @@
 @interface AugmentedViewController () <CLLocationManagerDelegate, TGLARViewDataSource, TGLARViewDelegate, PlaceOfInterestViewDelegate>
 
 @property (weak, nonatomic) IBOutlet TGLARView *arView;
+@property (weak, nonatomic) IBOutlet UIButton *northButton;
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 
@@ -64,6 +65,8 @@
     self.userHeight = 1.6;
     self.userLocation = self.locationManager.location;
     
+    self.northButton.enabled = self.arView.isMagenticNorthAvailable;
+
     // A single image shape in the X/Y plane at the user's location
     //
     PlaceOfInterest *userLocationPOI = [[PlaceOfInterest alloc] init];
@@ -176,6 +179,14 @@
         controller.currentLocation = self.userLocation;
         controller.foundPOIs = self.places;
     }
+}
+
+#pragma mark - Actions
+
+- (IBAction)toggleTrueNorth:(id)sender {
+
+    self.arView.useTrueNorth = !self.arView.isUsingTrueNorth;
+    self.northButton.selected = self.arView.isUsingTrueNorth;
 }
 
 #pragma mark - CLLocationManagerDelegate protocol
