@@ -62,6 +62,10 @@
 
 - (void)initCompass {
 
+#if TARGET_IPHONE_SIMULATOR
+    _fieldOfView = 50.0;
+#endif
+    
     _labelFont = [UIFont boldSystemFontOfSize:24.0];
     _labelColor = [UIColor whiteColor];
     
