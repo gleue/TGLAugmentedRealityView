@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'TGLAugmentedRealityView'
-  s.version  = '1.0.1'
+  s.version  = '1.0.2'
   s.license  = 'MIT'
   s.summary  = 'Place overlays on a camera preview and adjust their position depending on device attitude.'
   s.homepage = 'https://github.com/gleue/TGLAugmentedRealityView'
