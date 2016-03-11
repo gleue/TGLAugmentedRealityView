@@ -809,7 +809,10 @@ static const CGFloat kFOVARViewLensAdjustmentFactor = 0.05;
     CGFloat fovy = self.effectiveVerticalFov;
     CGFloat aspect = self.bounds.size.width / self.bounds.size.height;
     
-    _projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(fovy), aspect, 1.0f, 10000.0f);
+    CGFloat near = ([self.delegate respondsToSelector:@selector(arViewShapeOverlayNearClippingDistance:)]) ? [self.delegate arViewShapeOverlayNearClippingDistance:self] : 1.0;
+    CGFloat far = ([self.delegate respondsToSelector:@selector(arViewShapeOverlayFarClippingDistance:)]) ? [self.delegate arViewShapeOverlayFarClippingDistance:self] : 10000.0;
+    
+    _projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(fovy), aspect, near, far);
 }
 
 - (void)updateUserTransformation {

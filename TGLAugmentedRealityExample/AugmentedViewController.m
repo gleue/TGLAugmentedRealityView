@@ -308,6 +308,16 @@
     }
 }
 
+- (CGFloat)arViewShapeOverlayNearClippingDistance:(TGLARView *)arview {
+    
+    return 100.0;
+}
+
+- (CGFloat)arViewShapeOverlayFarClippingDistance:(TGLARView *)arview {
+    
+    return 2000.0;
+}
+
 #pragma amrk - PlaceOfInterestViewDelegate protocol
 
 - (void)poiViewButtonTapped:(PlaceOfInterestView *)view {

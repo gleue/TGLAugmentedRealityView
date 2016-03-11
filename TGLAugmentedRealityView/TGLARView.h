@@ -128,6 +128,28 @@
  */
 - (void)arView:(nonnull TGLARView *)arview didTapShapeOverlay:(nonnull TGLARShapeOverlay *)overlayShape;
 
+/** Asks the delegate for the far clipping of overlay shapes.
+ *
+ * If this method is not implemented by the delegate, the value
+ * defaults to 10000.0.
+ *
+ * @param arview The AR view requesting the distance value.
+ *
+ * @return A non-negative value for the far clipping distance.
+ */
+- (CGFloat)arViewShapeOverlayFarClippingDistance:(nonnull TGLARView *)arview;
+
+/** Asks the delegate for the near clipping of overlay shapes.
+ *
+ * If this method is not implemented by the delegate, the value
+ * defaults to 1.0.
+ *
+ * @param arview The AR view requesting the distance value.
+ *
+ * @return A non-negative value for the near clipping distance.
+ */
+- (CGFloat)arViewShapeOverlayNearClippingDistance:(nonnull TGLARView *)arview;
+
 @end
 
 /** The @p TGLARView presents 2D view-based overlays and 3D shape overlays on top of a camera preview.
@@ -192,7 +214,7 @@
  * Positive X values move the camera north, negative ones south.
  * Positive Y values move the camera west, negative ones east.
  */
-@property (nonatomic, assign) CGSize  positionOffset;
+@property (nonatomic, assign) CGSize positionOffset;
 
 /// Returns the OpenGL ES context used to draw overlay shapes.
 - (nonnull EAGLContext *)renderContext;
