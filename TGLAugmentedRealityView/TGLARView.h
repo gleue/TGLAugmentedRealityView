@@ -170,11 +170,11 @@
 @interface TGLARView : UIView  <GLKViewDelegate>
 
 /// An object conforming to @p TGLARCompass protocol receiving heading updates while the device moves. Default is @p nil.
-@property (nonatomic, weak) IBOutlet id<TGLARCompass> compass;
+@property (nonatomic, weak, nullable) IBOutlet id<TGLARCompass> compass;
 /// The object that acts as the delegate of this AR view. Default is @p nil.
-@property (nonatomic, weak) IBOutlet id<TGLARViewDelegate> delegate;
+@property (nonatomic, weak, nullable) IBOutlet id<TGLARViewDelegate> delegate;
 /// The object that acts as the data source of this AR view. Default is @p nil.
-@property (nonatomic, weak) IBOutlet id<TGLARViewDataSource> dataSource;
+@property (nonatomic, weak, nullable) IBOutlet id<TGLARViewDataSource> dataSource;
 
 /// Tells the AR view which device orientation to assume. Controls the selection of the virtual camera's field of view.
 @property (nonatomic, assign) UIInterfaceOrientation interfaceOrientation;

@@ -40,7 +40,7 @@
 @interface TGLARViewOverlay : UIView
 
 /// The overlay this view belongs to.
-@property (nonatomic, weak) id<TGLAROverlay> overlay;
+@property (nonatomic, weak, nullable) id<TGLAROverlay> overlay;
 
 /// The view containing the all of the overlays content-related views.
 @property (nonatomic, readonly, nonnull) UIView *contentView;

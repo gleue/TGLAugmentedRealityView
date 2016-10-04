@@ -41,10 +41,10 @@
 @interface TGLARShapeOverlay : NSObject
 
 /// The overlay this shape belongs to.
-@property (nonatomic, weak) id<TGLAROverlay> overlay;
+@property (nonatomic, weak, nullable) id<TGLAROverlay> overlay;
 
 /// The shape's OpenGL ES rendering context.
-@property (nonatomic, weak) EAGLContext *context;
+@property (nonatomic, weak, nullable) EAGLContext * context;
 /// The shape transformation matrix pre-multiplied to @p -viewMatrix.
 @property (nonatomic, assign) GLKMatrix4 transform;
 /// The shape's GLKKit rendering effect. @sa GLKBaseEffect for details.
