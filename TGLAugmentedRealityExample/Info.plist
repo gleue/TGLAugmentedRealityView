@@ -24,10 +24,10 @@
 	<string>2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>LOCATION_WHENINUSE_USAGE</string>
 	<key>NSCameraUsageDescription</key>
 	<string>CAMERA_USAGE</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>LOCATION_WHENINUSE_USAGE</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
