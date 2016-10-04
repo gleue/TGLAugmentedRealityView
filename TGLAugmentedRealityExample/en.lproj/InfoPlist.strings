@@ -7,3 +7,4 @@
 */
 
 "NSLocationWhenInUseUsageDescription" = "Location will be used to find and display nearby POIs.";
+"NSCameraUsageDescription" = "Camera will be used to display nearby POIs.";
