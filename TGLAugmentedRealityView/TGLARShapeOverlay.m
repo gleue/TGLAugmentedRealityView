@@ -56,7 +56,6 @@
         
         [EAGLContext setCurrentContext:self.context];
         
-        _effect = nil;
         self.context = nil;
     }
 }
