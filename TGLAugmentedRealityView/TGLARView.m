@@ -622,44 +622,43 @@ static const CGFloat kFOVARViewLensAdjustmentFactor = 0.05;
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
     
     // Compute modelview and projection matrices
-    // and use them to transform overlay views
-    // as well as GL overlay shapes
+    // and use them to transform GL overlay shapes
+    // as well as overlay views and compass
     //
     GLKMatrix4 cameraMatrix = GLKMatrix4Multiply(_cameraTransform, _userTransformation);
 
     _viewMatrix = GLKMatrix4Multiply(_deviceTransform, cameraMatrix);
     
+    [self drawShapes:NO];
+
     self.containerView.overlayTransformation = GLKMatrix4Multiply(_projectionMatrix, _viewMatrix);
 
-    bool inverted;
-
-    GLKMatrix4 inverseView = GLKMatrix4Invert(_viewMatrix, &inverted);
-    
-    if (inverted) {
+    if (self.compass) {
         
-        GLKVector3 xAxis = GLKVector3Make(1, 0, 0);
-        GLKVector3 northAxis = GLKMatrix4MultiplyVector3(inverseView, xAxis);
+        bool inverted;
         
-        northAxis.z = 0.0;
-        northAxis = GLKVector3Normalize(northAxis);
-
-        float northDot = GLKVector3DotProduct(northAxis, xAxis);
-        float northAngle = GLKMathRadiansToDegrees(acosf(northDot));
+        GLKMatrix4 inverseView = GLKMatrix4Invert(_viewMatrix, &inverted);
         
-        if (northAxis.y > 0.0) northAngle = 360.0 - northAngle;
-
-        northAngle -= 90.0;
-
-        if (northAngle < 0.0) northAngle += 360.0;
-        
-        [self.compass setHeadingAngle:northAngle];
+        if (inverted) {
+            
+            GLKVector3 xAxis = GLKVector3Make(1, 0, 0);
+            GLKVector3 northAxis = GLKMatrix4MultiplyVector3(inverseView, xAxis);
+            
+            northAxis.z = 0.0;
+            northAxis = GLKVector3Normalize(northAxis);
+            
+            float northDot = GLKVector3DotProduct(northAxis, xAxis);
+            float northAngle = GLKMathRadiansToDegrees(acosf(northDot));
+            
+            if (northAxis.y > 0.0) northAngle = 360.0 - northAngle;
+            
+            northAngle -= 90.0;
+            
+            if (northAngle < 0.0) northAngle += 360.0;
+            
+            [self.compass setHeadingAngle:northAngle];
+        }
     }
-    
-    // Trigger container's -drawRect:
-    //
-    [self.containerView setNeedsDisplay];
-    
-    [self drawShapes:NO];
 }
 
 - (void)drawShapes:(BOOL)picking {
