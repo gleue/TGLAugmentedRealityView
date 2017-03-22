@@ -611,7 +611,7 @@ static const CGFloat kFOVARViewLensAdjustmentFactor = 0.05;
         
         CMRotationMatrix r = d.attitude.rotationMatrix;
 
-        _cameraTransform = GLKMatrix4MakeAndTranspose(r.m11, r.m12, r.m13, 0.0, r.m21, r.m22, r.m23, 0.0, r.m31, r.m32, r.m33, 0.0, 0.0, 0.0, 0.0, 1.0);
+        _cameraTransform = GLKMatrix4Make(r.m11, r.m21, r.m31, 0.0, r.m12, r.m22, r.m32, 0.0, r.m13, r.m23, r.m33, 0.0, 0.0, 0.0, 0.0, 1.0);
     }
 
     // Trigger -glkView:drawInRect:
