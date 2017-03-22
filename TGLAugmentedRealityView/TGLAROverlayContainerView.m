@@ -33,7 +33,7 @@
 
 - (void)setOverlayViews:(NSArray<TGLARViewOverlay *> *)overlayViews {
     
-    for (TGLARViewOverlay *view in self.subviews) {
+    for (TGLARViewOverlay *view in self.overlayViews) {
         
         [view removeFromSuperview];
     }
@@ -77,10 +77,12 @@
             
             view.hidden = YES;
             view.calloutLength = 0.0;
+            
+            [view removeFromSuperview];
         }
     }
     
-    // Sort n visible overlays from back (0) to front (n-1)
+    // Arrange n visible overlays from back (0) to front (n-1)
     //
     [visibleViews sortUsingComparator:^NSComparisonResult (TGLARViewOverlay *view1, TGLARViewOverlay *view2) {
 
@@ -89,14 +91,6 @@
         
         return (NSComparisonResult)NSOrderedSame;
     }];
-    
-    for (TGLARViewOverlay *view in self.subviews) {
-        
-        if ([visibleViews indexOfObject:view] == NSNotFound) {
-            
-            [view removeFromSuperview];
-        }
-    }
 
     for (NSInteger idx = 0; idx < visibleViews.count; idx++) {
         
