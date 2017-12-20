@@ -219,6 +219,8 @@ static inline UIViewAnimationOptions animationOptionsWithCurve(UIViewAnimationCu
     
     self.searchBarBottomLayoutConstraint.constant = frame.size.height;
 
+    if (@available(iOS 11, *)) self.searchBarBottomLayoutConstraint.constant -= self.view.safeAreaInsets.bottom;
+
     NSTimeInterval duration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     UIViewAnimationCurve curve = [notification.userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue];
 

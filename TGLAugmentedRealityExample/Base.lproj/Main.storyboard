@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yCS-NF-kSa">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yCS-NF-kSa">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <deployment version="2352" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,22 +14,18 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SearchViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgJ-oV-PXT">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgJ-oV-PXT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="aFW-gr-2nC"/>
                                 </connections>
                             </mapView>
                             <searchBar contentMode="redraw" text="" placeholder="POI" translatesAutoresizingMaskIntoConstraints="NO" id="KbV-fU-cvd">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="512" width="320" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="N6F-UZ-qCW"/>
@@ -37,14 +34,15 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tgJ-oV-PXT" secondAttribute="bottom" id="6MJ-Ge-3FI"/>
-                            <constraint firstItem="tgJ-oV-PXT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BHp-0C-SGu"/>
+                            <constraint firstItem="TKO-3k-gkn" firstAttribute="bottom" secondItem="tgJ-oV-PXT" secondAttribute="bottom" id="6MJ-Ge-3FI"/>
+                            <constraint firstItem="tgJ-oV-PXT" firstAttribute="leading" secondItem="TKO-3k-gkn" secondAttribute="leading" id="BHp-0C-SGu"/>
                             <constraint firstItem="tgJ-oV-PXT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Fu2-RJ-E43"/>
-                            <constraint firstAttribute="trailing" secondItem="tgJ-oV-PXT" secondAttribute="trailing" id="X89-07-6ei"/>
-                            <constraint firstAttribute="trailing" secondItem="KbV-fU-cvd" secondAttribute="trailing" id="ZIm-l4-1K4"/>
-                            <constraint firstItem="KbV-fU-cvd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="c0Y-xp-3G3"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KbV-fU-cvd" secondAttribute="bottom" id="oCn-yk-HAc"/>
+                            <constraint firstItem="TKO-3k-gkn" firstAttribute="trailing" secondItem="tgJ-oV-PXT" secondAttribute="trailing" id="X89-07-6ei"/>
+                            <constraint firstItem="TKO-3k-gkn" firstAttribute="trailing" secondItem="KbV-fU-cvd" secondAttribute="trailing" id="ZIm-l4-1K4"/>
+                            <constraint firstItem="KbV-fU-cvd" firstAttribute="leading" secondItem="TKO-3k-gkn" secondAttribute="leading" id="c0Y-xp-3G3"/>
+                            <constraint firstItem="TKO-3k-gkn" firstAttribute="bottom" secondItem="KbV-fU-cvd" secondAttribute="bottom" id="oCn-yk-HAc"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="TKO-3k-gkn"/>
                     </view>
                     <navigationItem key="navigationItem" title="POI Suchen" id="dDA-fI-Tqz">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="lwE-X9-SUr">
@@ -68,16 +66,12 @@
         <scene sceneID="0Bn-zN-1oT">
             <objects>
                 <viewController id="yCS-NF-kSa" customClass="AugmentedViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="NdG-eO-qXE"/>
-                        <viewControllerLayoutGuide type="bottom" id="rkX-8j-TPt"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xns-EX-xBU" customClass="TGLARView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvS-Iw-et9">
-                                <rect key="frame" x="280" y="448" width="40" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvS-Iw-et9">
+                                <rect key="frame" x="140" y="416" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="MBj-Qh-8OW"/>
                                     <constraint firstAttribute="width" constant="60" id="lCg-c5-8Dv"/>
@@ -93,14 +87,14 @@
                                     <segue destination="oYb-nl-Uar" kind="presentation" identifier="OpenSearch" id="JMn-wQ-3gW"/>
                                 </connections>
                             </button>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zKi-9J-6Wb">
-                                <rect key="frame" x="0.0" y="520" width="600" height="80"/>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zKi-9J-6Wb">
+                                <rect key="frame" x="0.0" y="488" width="320" height="80"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="vJQ-eH-4BQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <view opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="elD-VZ-UaY" customClass="TGLARCompassView">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
+                                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="elD-VZ-UaY" customClass="TGLARCompassView">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="80" id="aNV-KV-nll"/>
@@ -147,8 +141,8 @@
                                 </constraints>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qf4-Qj-78z">
-                                <rect key="frame" x="16" y="483" width="90" height="29"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qf4-Qj-78z">
+                                <rect key="frame" x="16" y="451" width="90" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Magnetisch N">
@@ -165,14 +159,16 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="cvS-Iw-et9" firstAttribute="centerX" secondItem="xns-EX-xBU" secondAttribute="centerX" id="5av-F2-ffg"/>
-                            <constraint firstAttribute="trailing" secondItem="zKi-9J-6Wb" secondAttribute="trailing" id="E7g-ai-qcO"/>
-                            <constraint firstItem="zKi-9J-6Wb" firstAttribute="leading" secondItem="xns-EX-xBU" secondAttribute="leading" id="J4k-z5-88m"/>
-                            <constraint firstItem="rkX-8j-TPt" firstAttribute="top" secondItem="zKi-9J-6Wb" secondAttribute="bottom" id="aS0-sZ-YrN"/>
+                            <constraint firstItem="cvS-Iw-et9" firstAttribute="centerX" secondItem="lgJ-Rl-GlW" secondAttribute="centerX" id="5av-F2-ffg"/>
+                            <constraint firstItem="lgJ-Rl-GlW" firstAttribute="trailing" secondItem="zKi-9J-6Wb" secondAttribute="trailing" id="E7g-ai-qcO"/>
+                            <constraint firstItem="zKi-9J-6Wb" firstAttribute="leading" secondItem="lgJ-Rl-GlW" secondAttribute="leading" id="J4k-z5-88m"/>
+                            <constraint firstItem="lgJ-Rl-GlW" firstAttribute="bottom" secondItem="zKi-9J-6Wb" secondAttribute="bottom" id="aS0-sZ-YrN"/>
+                            <constraint firstItem="cvS-Iw-et9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Qf4-Qj-78z" secondAttribute="trailing" constant="4" id="e3J-it-P76"/>
                             <constraint firstItem="zKi-9J-6Wb" firstAttribute="top" secondItem="Qf4-Qj-78z" secondAttribute="bottom" constant="8" id="fQT-lg-7Sa"/>
                             <constraint firstItem="zKi-9J-6Wb" firstAttribute="top" secondItem="cvS-Iw-et9" secondAttribute="bottom" constant="32" id="hfb-7B-9al"/>
-                            <constraint firstItem="Qf4-Qj-78z" firstAttribute="leading" secondItem="xns-EX-xBU" secondAttribute="leading" constant="16" id="mWm-a8-Gxr"/>
+                            <constraint firstItem="Qf4-Qj-78z" firstAttribute="leading" secondItem="lgJ-Rl-GlW" secondAttribute="leading" constant="16" id="mWm-a8-Gxr"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="lgJ-Rl-GlW"/>
                         <connections>
                             <outlet property="compass" destination="elD-VZ-UaY" id="znY-gg-45T"/>
                             <outlet property="dataSource" destination="yCS-NF-kSa" id="Zbn-2P-AuH"/>
@@ -202,7 +198,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oYb-nl-Uar" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="b9D-ZX-o1K">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
