@@ -18,14 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2015 Tim Gleue. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="obG-Y5-kRd">
-                                <rect key="frame" x="5" y="626" width="365" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2017 Tim Gleue. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="obG-Y5-kRd">
+                                <rect key="frame" x="15" y="626" width="345" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TGLAugmentedRealityExample" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="GJd-Yh-RWb">
-                                <rect key="frame" x="5" y="322" width="365" height="43"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TGLAugmentedRealityExample" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="GJd-Yh-RWb">
+                                <rect key="frame" x="15" y="222" width="345" height="43"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -33,12 +33,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="centerY" secondItem="S5a-us-mGP" secondAttribute="centerY" id="Mnc-VB-HOc"/>
-                            <constraint firstItem="S5a-us-mGP" firstAttribute="trailing" secondItem="GJd-Yh-RWb" secondAttribute="trailing" constant="5" id="MrQ-ii-Det"/>
-                            <constraint firstItem="S5a-us-mGP" firstAttribute="trailing" secondItem="obG-Y5-kRd" secondAttribute="trailing" constant="5" id="Umx-aA-1nn"/>
-                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="leading" secondItem="S5a-us-mGP" secondAttribute="leading" constant="5" id="XKq-jW-kNB"/>
+                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="centerY" secondItem="S5a-us-mGP" secondAttribute="centerY" constant="-100" id="Mnc-VB-HOc"/>
+                            <constraint firstItem="S5a-us-mGP" firstAttribute="trailing" secondItem="GJd-Yh-RWb" secondAttribute="trailing" constant="15" id="MrQ-ii-Det"/>
+                            <constraint firstItem="S5a-us-mGP" firstAttribute="trailing" secondItem="obG-Y5-kRd" secondAttribute="trailing" constant="15" id="Umx-aA-1nn"/>
+                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="leading" secondItem="S5a-us-mGP" secondAttribute="leading" constant="15" id="XKq-jW-kNB"/>
                             <constraint firstItem="S5a-us-mGP" firstAttribute="bottom" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="20" id="Y44-ml-fuU"/>
-                            <constraint firstItem="obG-Y5-kRd" firstAttribute="leading" secondItem="S5a-us-mGP" secondAttribute="leading" constant="5" id="uAm-Og-Ww1"/>
+                            <constraint firstItem="obG-Y5-kRd" firstAttribute="leading" secondItem="S5a-us-mGP" secondAttribute="leading" constant="15" id="uAm-Og-Ww1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="S5a-us-mGP"/>
                     </view>
