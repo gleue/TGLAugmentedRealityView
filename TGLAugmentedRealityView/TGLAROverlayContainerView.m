@@ -141,12 +141,7 @@
         return (NSComparisonResult)NSOrderedSame;
     }];
 
-    for (NSInteger idx = 0; idx < visibleViews.count; idx++) {
-        
-        TGLARViewOverlay *view = visibleViews[idx];
-        
-        [self insertSubview:view atIndex:idx];
-    }
+    for (TGLARViewOverlay *view in visibleViews) [self.contentView addSubview:view];
 
     // Position overlays in container and minimize overlap
     //
