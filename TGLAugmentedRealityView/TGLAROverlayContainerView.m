@@ -52,7 +52,7 @@
     [self addCrosshairToView:self color:UIColor.greenColor];
 
     _contentView = [[UIView alloc] init];
-    _contentView.backgroundColor = [UIColor.redColor colorWithAlphaComponent:0.2]; //[UIColor clearColor];
+    _contentView.backgroundColor = [UIColor clearColor];
     _contentView.opaque = NO;
 
     [self addSubview:_contentView];
