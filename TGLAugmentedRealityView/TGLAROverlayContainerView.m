@@ -248,33 +248,4 @@
     return nil;
 }
 
-#pragma mark - Drawing
-
-//- (void)drawRect:(CGRect)rect {
-//    
-//    [[UIColor greenColor] setFill];
-//    
-//    for (TGLARViewOverlay *view in self.subviews) {
-//
-//        GLKVector3 targetPosition = [view.overlay targetPosition];
-//        GLKVector4 shapeVector = GLKVector4MakeWithVector3(targetPosition, 1.0);
-//        GLKVector4 homoVector = GLKMatrix4MultiplyVector4(self.overlayTransformation, shapeVector);
-//        GLKVector4 unitVector = GLKVector4DivideScalar(homoVector, homoVector.w);
-//        
-//        if (fabs(unitVector.x) <= 1.0 && fabs(unitVector.y) <= 1.0 && unitVector.z <= 1.0) {
-//
-//            // On screen
-//            //
-//            CGPoint screenPosition;
-//            
-//            screenPosition.x = 0.5 * (unitVector.x + 1.0) * CGRectGetWidth(self.bounds);
-//            screenPosition.y = 0.5 * (1.0 - unitVector.y) * CGRectGetHeight(self.bounds);
-//            
-//            CGRect frame = CGRectMake(screenPosition.x - 4, screenPosition.y - 4, 8, 8);
-//            
-//            UIRectFill(frame);
-//        }
-//    }
-//}
-
 @end
