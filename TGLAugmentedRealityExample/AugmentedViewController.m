@@ -310,7 +310,7 @@
 
 - (CGFloat)arViewShapeOverlayNearClippingDistance:(TGLARView *)arview {
     
-    return 100.0;
+    return 1.0;
 }
 
 - (CGFloat)arViewShapeOverlayFarClippingDistance:(TGLARView *)arview {
@@ -391,7 +391,7 @@
         
         if (userPoint.y < overlayPoint.y) northDistance = -northDistance;
         
-        GLKVector3 overlayPosition = GLKVector3Make(northDistance, westDistance, 0.0);
+        GLKVector3 overlayPosition = GLKVector3Make(northDistance, westDistance, (place == self.userLocationPOI) ? -2.0 * self.userHeight : 0.0);
         
         place.targetPosition = overlayPosition;
     }
