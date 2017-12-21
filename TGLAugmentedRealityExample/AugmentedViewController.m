@@ -120,9 +120,17 @@
     return UIStatusBarStyleLightContent;
 }
 
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-    
-    self.arView.interfaceOrientation = self.interfaceOrientation;
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+
+    [coordinator animateAlongsideTransition:nil completion:^(id<UIViewControllerTransitionCoordinator> coordinator) {
+
+        if ([UIApplication sharedApplication].statusBarOrientation != self.arView.interfaceOrientation) {
+
+            self.arView.interfaceOrientation = [UIApplication sharedApplication].statusBarOrientation;
+        }
+    }];
 }
 
 - (IBAction)closeSearch:(UIStoryboardSegue *)segue {
