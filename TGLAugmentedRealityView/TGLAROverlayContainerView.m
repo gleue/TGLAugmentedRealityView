@@ -49,8 +49,6 @@
 
 - (void)initContainer {
 
-    [self addCrosshairToView:self color:UIColor.greenColor];
-
     _contentView = [[UIView alloc] init];
     _contentView.backgroundColor = [UIColor clearColor];
     _contentView.opaque = NO;
