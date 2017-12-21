@@ -160,8 +160,8 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cvS-Iw-et9" firstAttribute="centerX" secondItem="lgJ-Rl-GlW" secondAttribute="centerX" id="5av-F2-ffg"/>
-                            <constraint firstItem="lgJ-Rl-GlW" firstAttribute="trailing" secondItem="zKi-9J-6Wb" secondAttribute="trailing" id="E7g-ai-qcO"/>
-                            <constraint firstItem="zKi-9J-6Wb" firstAttribute="leading" secondItem="lgJ-Rl-GlW" secondAttribute="leading" id="J4k-z5-88m"/>
+                            <constraint firstAttribute="trailing" secondItem="zKi-9J-6Wb" secondAttribute="trailing" id="E7g-ai-qcO"/>
+                            <constraint firstItem="zKi-9J-6Wb" firstAttribute="leading" secondItem="xns-EX-xBU" secondAttribute="leading" id="J4k-z5-88m"/>
                             <constraint firstItem="lgJ-Rl-GlW" firstAttribute="bottom" secondItem="zKi-9J-6Wb" secondAttribute="bottom" id="aS0-sZ-YrN"/>
                             <constraint firstItem="cvS-Iw-et9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Qf4-Qj-78z" secondAttribute="trailing" constant="4" id="e3J-it-P76"/>
                             <constraint firstItem="zKi-9J-6Wb" firstAttribute="top" secondItem="Qf4-Qj-78z" secondAttribute="bottom" constant="8" id="fQT-lg-7Sa"/>

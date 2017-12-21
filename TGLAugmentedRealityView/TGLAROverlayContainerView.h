@@ -31,6 +31,9 @@
 /// A @p UIView subclass used internally to position the overlay shapes on a @p TGLARView.
 @interface TGLAROverlayContainerView : UIView
 
+/// The view containing the all of the overlay views.
+@property (nonatomic, readonly, nonnull) UIView *contentView;
+
 /// The current transformation derived from device attitude.
 @property (nonatomic, assign) GLKMatrix4 overlayTransformation;
 

@@ -183,17 +183,18 @@ static const CGFloat kFOVARViewLensAdjustmentFactor = 0.05;
 #pragma mark - Layout
 
 - (void)layoutSubviews {
-    
-    CGRect bounds = self.bounds;
 
-    self.captureLayer.frame = bounds;
-    self.renderView.frame = bounds;
-    self.containerView.frame = bounds;
-    
+    [super layoutSubviews];
+
     [self computeFovFromCameraFormat];
     [self updateProjectionMatrix];
 
-    [super layoutSubviews];
+    CGRect bounds = self.bounds;
+
+    self.captureView.frame = bounds;
+    self.captureLayer.frame = bounds;
+    self.renderView.frame = bounds;
+    self.containerView.frame = bounds;
 }
 
 #pragma mark - Accessors

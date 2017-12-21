@@ -29,6 +29,35 @@
 
 @implementation TGLAROverlayContainerView
 
+- (instancetype)initWithFrame:(CGRect)frame {
+
+    self = [super initWithFrame:frame];
+
+    if (self) [self initContainer];
+
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+
+    self = [super initWithCoder:aDecoder];
+
+    if (self) [self initContainer];
+
+    return self;
+}
+
+- (void)initContainer {
+
+    [self addCrosshairToView:self color:UIColor.greenColor];
+
+    _contentView = [[UIView alloc] init];
+    _contentView.backgroundColor = [UIColor.redColor colorWithAlphaComponent:0.2]; //[UIColor clearColor];
+    _contentView.opaque = NO;
+
+    [self addSubview:_contentView];
+}
+
 #pragma mark - Accessors
 
 - (void)setOverlayViews:(NSArray<TGLARViewOverlay *> *)overlayViews {
@@ -53,7 +82,29 @@
 #pragma mark - Layout
 
 - (void)layoutSubviews {
-    
+
+    [super layoutSubviews];
+
+    CGRect bounds = self.bounds;
+    CGSize offset = CGSizeZero;
+
+    if (@available(iOS 11, *)) {
+
+        CGRect safeBounds = CGRectMake(bounds.origin.x + self.safeAreaInsets.left, bounds.origin.y + self.safeAreaInsets.top, bounds.size.width - self.safeAreaInsets.left - self.safeAreaInsets.right, bounds.size.height - self.safeAreaInsets.top - self.safeAreaInsets.bottom);;
+
+        self.contentView.frame = safeBounds;
+
+        offset.width -= 0.5 * self.safeAreaInsets.left;
+        offset.width += 0.5 * self.safeAreaInsets.right;
+
+        offset.height -= 0.5 * self.safeAreaInsets.top;
+        offset.height += 0.5 * self.safeAreaInsets.bottom;
+
+    } else {
+
+        self.contentView.frame = bounds;
+    }
+
     // Perform 3D viewing transformation and clip invisible overlays
     //
     NSMutableArray<TGLARViewOverlay *> *visibleViews = [NSMutableArray array];
@@ -77,9 +128,9 @@
             
             view.hidden = YES;
             view.calloutLength = 0.0;
-            
-            [view removeFromSuperview];
         }
+
+        [view removeFromSuperview];
     }
     
     // Arrange n visible overlays from back (0) to front (n-1)
@@ -104,18 +155,18 @@
     CGFloat calloutLength = 0.0;
     CGFloat calloutOffset = 30.0;
     CGFloat calloutDefault = 120.0;
-    
-    for (NSInteger idx = self.subviews.count - 1; idx >= 0; idx--) {
 
-        TGLARViewOverlay *view = self.subviews[idx];
+    for (NSInteger idx = visibleViews.count - 1; idx >= 0; idx--) {
+
+        TGLARViewOverlay *view = visibleViews[idx];
 
         GLKVector2 unitPosition = GLKVector2Make(view.viewPosition.x, view.viewPosition.y);
         float unitLength = GLKVector2Length(unitPosition);
 
         CGPoint screenPosition;
         
-        screenPosition.x = round(0.5 * (unitPosition.x + 1.0) * CGRectGetWidth(self.bounds));
-        screenPosition.y = round(0.5 * (1.0 - unitPosition.y) * CGRectGetHeight(self.bounds));
+        screenPosition.x = round(0.5 * (unitPosition.x + 1.0) * CGRectGetWidth(self.contentView.bounds)) + offset.width;
+        screenPosition.y = round(0.5 * (1.0 - unitPosition.y) * CGRectGetHeight(self.contentView.bounds)) + offset.height;
 
         if (view.hidden) {
 
@@ -131,6 +182,7 @@
             }
 
             view.rightAligned = (unitPosition.x > 0.0);
+            view.hidden = NO;
 
         } else {
             
@@ -166,21 +218,12 @@
         if (view.rightAligned) frame.origin.x -= CGRectGetWidth(frame);
         
         frame.origin.y = screenPosition.y;
-        
+
         if (!view.upsideDown) frame.origin.y -= CGRectGetHeight(frame);
 
-        if (unitLength > 1.0) {
-            
-            view.alpha = 2.0 - unitLength;
-
-        } else {
-        
-            view.alpha = 1.0;
-        }
-        
         view.frame = frame;
-        view.hidden = NO;
-        
+        view.alpha = (unitLength > 1.0) ? MAX(2.0 - unitLength, 0.0) : 1.0;
+
         [view setNeedsDisplay];
     }
 }
@@ -191,7 +234,7 @@
     
     if ([self pointInside:point withEvent:event] && self.isUserInteractionEnabled && !self.isHidden && self.alpha > 0.01) {
         
-        for (UIView *subview in [self.subviews reverseObjectEnumerator]) {
+        for (UIView *subview in [self.contentView.subviews reverseObjectEnumerator]) {
             
             CGPoint convertedPoint = [subview convertPoint:point fromView:self];
             UIView *hitTestView = [subview hitTest:convertedPoint withEvent:event];
