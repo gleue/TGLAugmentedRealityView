@@ -71,18 +71,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvS-Iw-et9">
-                                <rect key="frame" x="140" y="416" width="40" height="40"/>
+                                <rect key="frame" x="130" y="420" width="60" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="MBj-Qh-8OW"/>
                                     <constraint firstAttribute="width" constant="60" id="lCg-c5-8Dv"/>
                                 </constraints>
-                                <state key="normal" image="Search"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="MBj-Qh-8OW"/>
-                                        <exclude reference="lCg-c5-8Dv"/>
-                                    </mask>
-                                </variation>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="3"/>
+                                <state key="normal" image="Locations"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="oYb-nl-Uar" kind="presentation" identifier="OpenSearch" id="JMn-wQ-3gW"/>
                                 </connections>
@@ -142,8 +144,8 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qf4-Qj-78z">
-                                <rect key="frame" x="16" y="451" width="90" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="16" y="452" width="95" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Magnetisch N">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -164,9 +166,9 @@
                             <constraint firstItem="zKi-9J-6Wb" firstAttribute="leading" secondItem="xns-EX-xBU" secondAttribute="leading" id="J4k-z5-88m"/>
                             <constraint firstItem="lgJ-Rl-GlW" firstAttribute="bottom" secondItem="zKi-9J-6Wb" secondAttribute="bottom" id="aS0-sZ-YrN"/>
                             <constraint firstItem="cvS-Iw-et9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Qf4-Qj-78z" secondAttribute="trailing" constant="4" id="e3J-it-P76"/>
-                            <constraint firstItem="zKi-9J-6Wb" firstAttribute="top" secondItem="Qf4-Qj-78z" secondAttribute="bottom" constant="8" id="fQT-lg-7Sa"/>
-                            <constraint firstItem="zKi-9J-6Wb" firstAttribute="top" secondItem="cvS-Iw-et9" secondAttribute="bottom" constant="32" id="hfb-7B-9al"/>
+                            <constraint firstItem="zKi-9J-6Wb" firstAttribute="top" secondItem="cvS-Iw-et9" secondAttribute="bottom" constant="8" id="hfb-7B-9al"/>
                             <constraint firstItem="Qf4-Qj-78z" firstAttribute="leading" secondItem="lgJ-Rl-GlW" secondAttribute="leading" constant="16" id="mWm-a8-Gxr"/>
+                            <constraint firstItem="Qf4-Qj-78z" firstAttribute="baseline" secondItem="cvS-Iw-et9" secondAttribute="baseline" id="uHd-uF-8eV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lgJ-Rl-GlW"/>
                         <connections>
@@ -212,6 +214,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Search" width="40" height="40"/>
+        <image name="Locations" width="42" height="46"/>
     </resources>
+    <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

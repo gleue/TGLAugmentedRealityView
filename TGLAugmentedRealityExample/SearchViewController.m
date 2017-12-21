@@ -110,7 +110,7 @@ static inline UIViewAnimationOptions animationOptionsWithCurve(UIViewAnimationCu
             view = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:ident];
             
             view.image = [UIImage imageNamed:@"Pin"];
-            view.centerOffset = CGPointMake(0.0, -0.5 * view.image.size.height);
+            view.centerOffset = CGPointMake(0.0, -0.5 * view.image.size.height + 8.0);
             view.canShowCallout = YES;
             view.calloutOffset = CGPointMake(0.0, -0.1 * view.image.size.height);
             

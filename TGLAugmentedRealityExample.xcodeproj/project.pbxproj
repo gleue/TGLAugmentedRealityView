@@ -13,6 +13,7 @@
 		3D701EE51BFF53410092DB4B /* PlaceOfInterestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D701EE41BFF53410092DB4B /* PlaceOfInterestView.m */; };
 		3D7AD0AF1BF0BDD300EB040C /* PlaceOfInterest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7AD0AE1BF0BDD300EB040C /* PlaceOfInterest.m */; };
 		3D7DF1761FEBBAA1009346C6 /* Compass.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7DF1751FEBBAA0009346C6 /* Compass.png */; };
+		3D7DF1781FEC04F9009346C6 /* Target.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7DF1771FEC04F8009346C6 /* Target.png */; };
 		3D8A19411C060FED00B91862 /* TGLARBillboardImageShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8A19331C060FED00B91862 /* TGLARBillboardImageShape.m */; };
 		3D8A19421C060FED00B91862 /* TGLARCompassView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8A19351C060FED00B91862 /* TGLARCompassView.m */; };
 		3D8A19431C060FED00B91862 /* TGLARImageShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8A19371C060FED00B91862 /* TGLARImageShape.m */; };
@@ -43,6 +44,7 @@
 		3D7AD0AD1BF0BDD300EB040C /* PlaceOfInterest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceOfInterest.h; sourceTree = "<group>"; };
 		3D7AD0AE1BF0BDD300EB040C /* PlaceOfInterest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceOfInterest.m; sourceTree = "<group>"; };
 		3D7DF1751FEBBAA0009346C6 /* Compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Compass.png; sourceTree = "<group>"; };
+		3D7DF1771FEC04F8009346C6 /* Target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Target.png; sourceTree = "<group>"; };
 		3D8A19321C060FED00B91862 /* TGLARBillboardImageShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLARBillboardImageShape.h; sourceTree = "<group>"; };
 		3D8A19331C060FED00B91862 /* TGLARBillboardImageShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLARBillboardImageShape.m; sourceTree = "<group>"; };
 		3D8A19341C060FED00B91862 /* TGLARCompassView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLARCompassView.h; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		3DAEF8551BF0952E0037E9C4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3D7DF1771FEC04F8009346C6 /* Target.png */,
 				3D7DF1751FEBBAA0009346C6 /* Compass.png */,
 				3DCE74CF1BECB2E800985E03 /* Main.storyboard */,
 				3DCE74D21BECB2E800985E03 /* Assets.xcassets */,
@@ -237,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D7DF1781FEC04F9009346C6 /* Target.png in Resources */,
 				3D7DF1761FEBBAA1009346C6 /* Compass.png in Resources */,
 				3D0E465F1C071950003CBE4F /* LaunchScreen.storyboard in Resources */,
 				3D0E46571C071533003CBE4F /* Localizable.strings in Resources */,

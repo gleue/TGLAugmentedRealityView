@@ -365,7 +365,7 @@
         
         if (!place.overlayShape) {
             
-            place.overlayShape = [[TGLARBillboardImageShape alloc] initWithContext:self.arView.renderContext size:CGSizeMake(100.0, 100.0) image:[UIImage imageNamed:@"POI"]];
+            place.overlayShape = [[TGLARBillboardImageShape alloc] initWithContext:self.arView.renderContext size:CGSizeMake(100.0, 100.0) image:[UIImage imageNamed:@"Target"]];
         }
     }
     
